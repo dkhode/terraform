@@ -24,7 +24,7 @@ data "null_data_source" "apps" {
   count    = "${length(var.apps)}"
   inputs = {
     name = "${ lookup(var.apps[count.index], "name", "") }"
-    type = "${ lookup(var.services[count.index], "type", "") }"
+    type = "${ lookup(var.apps[count.index], "type", "") }"
   }
 }
 
